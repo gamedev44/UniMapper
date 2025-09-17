@@ -1,0 +1,124 @@
+{
+    "settings": {
+        "profile_name": "Star Citizen - X52 Pro (Advanced)",
+        "mode_bindings": {
+            "cycle": "button_5",
+            "on_foot": "",
+            "ground_vehicle": "",
+            "flight": ""
+        },
+        "on_foot": {
+            "mouse_sensitivity": 6.0,
+            "mouse_acceleration": false,
+            "invert_axes": {
+                "1": true
+            }
+        },
+        "ground_vehicle": {
+            "mouse_sensitivity": 8.0,
+            "mouse_acceleration": false,
+            "invert_axes": {
+                "2": true
+            }
+        },
+        "flight": {
+            "mouse_sensitivity": 1.5,
+            "mouse_acceleration": false,
+            "invert_axes": {
+                "1": true
+            }
+        },
+        "global": {
+            "deadzone": 0.1,
+            "axis_to_button_threshold": 0.8
+        }
+    },
+    "mappings": {
+        "on_foot": {
+            "button_0": "mouse_left",
+            "button_1": "mouse_right",
+            "button_2": "r",
+            "button_3": "g",
+            "button_4": "f",
+            "button_5": "",
+            "button_6": "shift",
+            "button_7": "i",
+            "button_8": "f1",
+            "button_9": "escape",
+            "button_10": "c",
+            "button_11": "ctrl",
+            "button_12": "t",
+            "button_13": "f4",
+            "hat_0_up": "w",
+            "hat_0_down": "s",
+            "hat_0_left": "a",
+            "hat_0_right": "d",
+            "hat_1_up": "1",
+            "hat_1_down": "2",
+            "hat_1_left": "3",
+            "hat_1_right": "4",
+            "axis_0": "mouse_x_axis",
+            "axis_1": "mouse_y_axis",
+            "axis_2": "",
+            "axis_3": "q,e",
+            "axis_4": ""
+        },
+        "ground_vehicle": {
+            "button_0": "mouse_left",
+            "button_1": "mouse_right",
+            "button_2": "g",
+            "button_3": "v",
+            "button_4": "mouse_middle",
+            "button_5": "",
+            "button_6": "shift",
+            "button_7": "p",
+            "button_8": "ralt,r",
+            "button_9": "l",
+            "button_14": "x",
+            "hat_0_up": "mouse_move_up",
+            "hat_0_down": "mouse_move_down",
+            "hat_0_left": "mouse_move_left",
+            "hat_0_right": "mouse_move_right",
+            "axis_0": "a,d",
+            "axis_1": "",
+            "axis_2": "throttle_fwd,throttle_rev"
+        },
+        "flight": {
+            "button_0": "mouse_left",
+            "button_1": "mouse_right",
+            "button_2": "mouse_middle",
+            "button_3": "g",
+            "button_4": "t",
+            "button_5": "",
+            "button_6": "shift",
+            "button_7": "c",
+            "button_8": "b",
+            "button_9": "l",
+            "button_10": "u",
+            "button_11": "k",
+            "button_12": "n",
+            "button_13": "f4",
+            "button_14": "x",
+            "button_15": "ralt,k",
+            "button_19": "space",
+            "button_20": "ctrl",
+            "button_21": "d",
+            "button_22": "a",
+            "button_27": "v",
+            "button_28": "m",
+            "hat_1_up": "f5",
+            "hat_1_down": "f8",
+            "hat_1_left": "f7",
+            "hat_1_right": "f6",
+            "hat_2_up": "5",
+            "hat_2_down": "4",
+            "hat_2_left": "h",
+            "hat_2_right": "j",
+            "axis_0": "mouse_x_axis",
+            "axis_1": "mouse_y_axis",
+            "axis_2": "throttle_fwd",
+            "axis_3": "q",
+            "axis_4": "e"
+        }
+    }
+}
