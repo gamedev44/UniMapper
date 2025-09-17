@@ -102,13 +102,13 @@ class ControllerMapper:
 
     def setup_gui(self):
         self.root = tk.Tk()
-        self.root.title("Universal Controller Mapper v4.0 (Final)")
+        self.root.title("Uni-Mapper v4.0")
         self.root.geometry("1100x900")
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         
         header_frame = ttk.Frame(self.root)
         header_frame.pack(pady=10)
-        ttk.Label(header_frame, text="Universal Controller Mapper", font=("Helvetica", 18, "bold")).pack()
+        ttk.Label(header_frame, text="Uni-Mapper v4.0", font=("Helvetica", 18, "bold")).pack()
         ttk.Label(header_frame, text="Author: Asterisk", font=("Helvetica", 10)).pack()
 
         self.main_notebook = ttk.Notebook(self.root)
