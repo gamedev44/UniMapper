@@ -1,0 +1,44 @@
+Uni-Mapper - End-User License Agreement
+Copyright (c) 2024 Asterisk (the "Developer")
+
+--- Preamble ---
+
+This license governs your use of the Uni-Mapper software and its associated source code (collectively, the "Software"). The Software is "source-available," meaning its source code is provided for inspection, transparency, and educational purposes. However, it is not free and open-source software. The rights to modify, distribute, or use the Software for commercial purposes are strictly reserved by the Developer.
+
+By using, viewing, or possessing any part of the Software, you agree to be bound by the terms of this license.
+
+--- Terms and Conditions ---
+
+1. Grant of License
+
+The Developer grants you a non-exclusive, non-transferable, revocable license to:
+
+Download and use the compiled, executable version of the Software for personal, non-commercial purposes.
+
+View and inspect the source code of the Software for personal, educational, or security-auditing purposes.
+
+2. Restrictions
+
+All rights not expressly granted in Section 1 are reserved by the Developer. You are explicitly forbidden from doing any of the following under any circumstance:
+
+Modification: You may not modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Software.
+
+Redistribution: You may not redistribute, sell, rent, lease, sublicense, or otherwise transfer the Software or any copies of it, in either source or binary form.
+
+Commercial Use: You may not use the Software for any commercial purpose, including but not limited to selling services that use the Software, including it as part of a commercial package, or using it in a business environment without direct, written authorization from the Developer.
+
+Removal of Notices: You may not remove or alter any copyright, trademark, or other proprietary notices that appear in the Software or its source code.
+
+3. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH YOU.
+
+4. Limitation of Liability
+
+IN NO EVENT SHALL THE DEVELOPER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. THIS INCLUDES, BUT IS NOT LIMITED TO, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES.
+
+5. Governing Law
+
+This License is governed by and construed in accordance with the laws of the jurisdiction in which the Developer resides, without regard to its conflict of law provisions.
+
+For any inquiries or to request permissions beyond the scope of this license, please contact the Developer directly.

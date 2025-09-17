@@ -1,0 +1,127 @@
+{
+    "settings": {
+        "profile_name": "No Man's Sky (Official)",
+        "mode_bindings": {
+            "cycle": "GUIDE",
+            "on_foot": "",
+            "ground_vehicle": "",
+            "flight": ""
+        },
+        "on_foot": {
+            "mouse_sensitivity": 20.0,
+            "mouse_acceleration": false,
+            "invert_left_x": false,
+            "invert_left_y": false,
+            "invert_right_x": false,
+            "invert_right_y": false
+        },
+        "ground_vehicle": {
+            "mouse_sensitivity": 20.0,
+            "mouse_acceleration": false,
+            "invert_left_x": false,
+            "invert_left_y": false,
+            "invert_right_x": false,
+            "invert_right_y": false
+        },
+        "flight": {
+            "mouse_sensitivity": 20.0,
+            "mouse_acceleration": false,
+            "invert_left_x": false,
+            "invert_left_y": false,
+            "invert_right_x": false,
+            "invert_right_y": false
+        },
+        "global": {
+            "deadzone_left": 0.19,
+            "deadzone_right": 0.19,
+            "deadzone_trigger": 0.1,
+            "auto_center_left": false,
+            "auto_center_right": true
+        }
+    },
+    "mappings": {
+        "on_foot": {
+            "LEFT_STICK_UP": "w",
+            "LEFT_STICK_DOWN": "s",
+            "LEFT_STICK_LEFT": "a",
+            "LEFT_STICK_RIGHT": "d",
+            "RIGHT_STICK_UP": "mouse_move_up",
+            "RIGHT_STICK_DOWN": "mouse_move_down",
+            "RIGHT_STICK_LEFT": "mouse_move_left",
+            "RIGHT_STICK_RIGHT": "mouse_move_right",
+            "DPAD_UP": "t",
+            "DPAD_DOWN": "",
+            "DPAD_LEFT": "h",
+            "DPAD_RIGHT": "",
+            "A": "space",
+            "B": "escape",
+            "X": "e",
+            "Y": "x",
+            "LB": "q,mouse_middle",
+            "RB": "q",
+            "LT": "f",
+            "RT": "mouse_left",
+            "START": "escape",
+            "BACK": "tab",
+            "GUIDE": "",
+            "LEFT_STICK_CLICK": "c",
+            "RIGHT_STICK_CLICK": ""
+        },
+        "ground_vehicle": {
+            "LEFT_STICK_UP": "w",
+            "LEFT_STICK_DOWN": "s",
+            "LEFT_STICK_LEFT": "a",
+            "LEFT_STICK_RIGHT": "d",
+            "RIGHT_STICK_UP": "mouse_move_up",
+            "RIGHT_STICK_DOWN": "mouse_move_down",
+            "RIGHT_STICK_LEFT": "mouse_move_left",
+            "RIGHT_STICK_RIGHT": "mouse_move_right",
+            "DPAD_UP": "",
+            "DPAD_DOWN": "",
+            "DPAD_LEFT": "",
+            "DPAD_RIGHT": "",
+            "A": "space",
+            "B": "shift",
+            "X": "e",
+            "Y": "x",
+            "LB": "mouse_middle",
+            "RB": "mouse_left",
+            "LT": "s",
+            "RT": "w",
+            "START": "escape",
+            "BACK": "tab",
+            "GUIDE": "space",
+            "LEFT_STICK_CLICK": "c",
+            "RIGHT_STICK_CLICK": ""
+        },
+        "flight": {
+            "LEFT_STICK_UP": "mouse_move_up",
+            "LEFT_STICK_DOWN": "mouse_move_down",
+            "LEFT_STICK_LEFT": "mouse_move_left",
+            "LEFT_STICK_RIGHT": "mouse_move_right",
+            "RIGHT_STICK_UP": "mouse_move_up",
+            "RIGHT_STICK_DOWN": "mouse_move_down",
+            "RIGHT_STICK_LEFT": "mouse_move_left",
+            "RIGHT_STICK_RIGHT": "mouse_move_right",
+            "DPAD_UP": "",
+            "DPAD_DOWN": "m",
+            "DPAD_LEFT": "",
+            "DPAD_RIGHT": "",
+            "A": "mouse_left",
+            "B": "shift",
+            "X": "e",
+            "Y": "x",
+            "LB": "a",
+            "RB": "d",
+            "LT": "s",
+            "RT": "w",
+            "START": "escape",
+            "BACK": "tab",
+            "GUIDE": "space",
+            "LEFT_STICK_CLICK": "c",
+            "RIGHT_STICK_CLICK": ""
+        }
+    }
+}
+
+
