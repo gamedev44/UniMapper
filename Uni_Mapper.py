@@ -26,6 +26,17 @@ def is_admin():
 
 class ControllerMapper:
     def __init__(self):
+        # --- Pathing Setup ---
+        # Get the base path for the application, works for script and frozen exe
+        if getattr(sys, 'frozen', False):
+            self.base_path = os.path.dirname(sys.executable)
+        else:
+            self.base_path = os.path.dirname(os.path.abspath(__file__))
+
+        self.presets_path = os.path.join(self.base_path, 'presets')
+        self.profiles_path = os.path.join(self.base_path, 'profiles')
+        self.last_profile_file = os.path.join(self.base_path, 'last_profile.txt')
+
         pygame.init()
         pygame.joystick.init()
 
@@ -84,16 +95,14 @@ class ControllerMapper:
         return {mode: base.copy() for mode in self.modes}
 
     def _scan_for_presets(self):
-        preset_dir = 'presets'
-        if not os.path.exists(preset_dir):
-            os.makedirs(preset_dir)
-            # Cannot log here as GUI is not set up yet
-            print(f"Created '{preset_dir}' directory for game presets.")
+        if not os.path.exists(self.presets_path):
+            os.makedirs(self.presets_path)
+            print(f"Created '{self.presets_path}' directory for game presets.")
         
-        for filename in os.listdir(preset_dir):
+        for filename in os.listdir(self.presets_path):
             if filename.endswith('.json'):
                 preset_name = os.path.splitext(filename)[0]
-                self.presets[preset_name] = os.path.join(preset_dir, filename)
+                self.presets[preset_name] = os.path.join(self.presets_path, filename)
         
         if self.presets:
             print(f"Found presets: {', '.join(self.presets.keys())}")
@@ -102,13 +111,13 @@ class ControllerMapper:
 
     def setup_gui(self):
         self.root = tk.Tk()
-        self.root.title("Uni-Mapper v4.0")
+        self.root.title("Uni-Mapper v4.1")
         self.root.geometry("1100x900")
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         
         header_frame = ttk.Frame(self.root)
         header_frame.pack(pady=10)
-        ttk.Label(header_frame, text="Uni-Mapper v4.0", font=("Helvetica", 18, "bold")).pack()
+        ttk.Label(header_frame, text="Uni-Mapper", font=("Helvetica", 18, "bold")).pack()
         ttk.Label(header_frame, text="Author: Asterisk", font=("Helvetica", 10)).pack()
 
         self.main_notebook = ttk.Notebook(self.root)
@@ -136,7 +145,6 @@ class ControllerMapper:
         mapping_frame = ttk.Frame(self.main_notebook)
         self.main_notebook.add(mapping_frame, text="Mappings & Profiles")
         
-        # --- Left Side: Control Mode Tabs ---
         mode_notebook = ttk.Notebook(mapping_frame)
         mode_notebook.pack(side='left', fill='both', expand=True, padx=5, pady=5)
         self.mapping_widgets = {mode: {} for mode in self.modes}
@@ -146,7 +154,6 @@ class ControllerMapper:
             mode_notebook.add(tab_frame, text=title)
             self._create_mode_mapping_ui(tab_frame, mode)
 
-        # --- Right Side: Profiles and Presets ---
         right_pane = ttk.Frame(mapping_frame, width=250)
         right_pane.pack(side='right', fill='y', padx=5, pady=5)
         
@@ -321,10 +328,8 @@ class ControllerMapper:
         self.stop_key_capture()
 
     def stop_key_capture(self):
-        if hasattr(self, 'key_listener'):
-            self.key_listener.stop()
-        if hasattr(self, 'mouse_listener'):
-            self.mouse_listener.stop()
+        if hasattr(self, 'key_listener'): self.key_listener.stop()
+        if hasattr(self, 'mouse_listener'): self.mouse_listener.stop()
         self.key_capture_mode = False
         if self.capturing_for:
             mode, btn = self.capturing_for.split('_', 1)
@@ -365,8 +370,9 @@ class ControllerMapper:
         for bn, wd in self.mode_binding_widgets.items():
             self.settings['mode_bindings'][bn] = wd['var'].get()
         try:
-            os.makedirs('profiles', exist_ok=True)
-            with open(f'profiles/{profile_name}.json', 'w') as f:
+            os.makedirs(self.profiles_path, exist_ok=True)
+            profile_path = os.path.join(self.profiles_path, f'{profile_name}.json')
+            with open(profile_path, 'w') as f:
                 json.dump({'settings': self.settings, 'mappings': self.mappings}, f, indent=4)
             self.log(f"Saved profile: {profile_name}")
             messagebox.showinfo("Success", f"Profile '{profile_name}' saved!")
@@ -374,7 +380,7 @@ class ControllerMapper:
             messagebox.showerror("Error", f"Failed to save profile: {e}")
 
     def _browse_and_load_profile(self):
-        filename = filedialog.askopenfilename(initialdir='profiles', title="Select Profile", filetypes=[("JSON files", "*.json")])
+        filename = filedialog.askopenfilename(initialdir=self.profiles_path, title="Select Profile", filetypes=[("JSON files", "*.json")])
         if filename:
             self.load_profile(filename)
 
@@ -387,8 +393,8 @@ class ControllerMapper:
 
     def load_profile(self, filename=None, is_preset=False):
         if filename is None:
-            if os.path.exists('last_profile.txt'):
-                with open('last_profile.txt', 'r') as f:
+            if os.path.exists(self.last_profile_file):
+                with open(self.last_profile_file, 'r') as f:
                     filename = f.read().strip()
             if not filename or not os.path.exists(filename):
                 self.settings = self._get_default_settings()
@@ -398,8 +404,8 @@ class ControllerMapper:
         
         if not os.path.exists(filename):
             messagebox.showerror("Error", f"Profile not found: {filename}")
-            if os.path.exists('last_profile.txt'):
-                os.remove('last_profile.txt')
+            if os.path.exists(self.last_profile_file):
+                os.remove(self.last_profile_file)
             return
         
         try:
@@ -409,7 +415,7 @@ class ControllerMapper:
             self.mappings = self._merge_dicts(self._get_default_mappings(), data.get('mappings', {}))
             self._update_gui_from_data()
             if not is_preset:
-                with open('last_profile.txt', 'w') as f:
+                with open(self.last_profile_file, 'w') as f:
                     f.write(filename)
             msg_type = "Preset" if is_preset else "Profile"
             self.log(f"Loaded {msg_type}: {self.settings['profile_name']}")
